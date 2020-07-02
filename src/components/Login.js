@@ -19,8 +19,7 @@ class Login extends React.Component {
     console.log("I am here");
     document.getElementById("loginEmail").value = "";
     document.getElementById("loginPassword").value = "";
-    const url =
-      "https://edward-express-latex-backend.herokuapp.com/api/v1/users/login";
+    const url = "https://markdown-backend.herokuapp.com/api/v1/users/login";
     const options = {
       method: "POST",
       credentials: "include",

@@ -4,7 +4,7 @@ class Title extends React.Component {
   render() {
     return (
       <div className=" ui segment">
-        <label class="ui raised segment">Edward's LaTeX compiler</label>
+        <label class="ui raised segment">Edward's Markdown editor</label>
       </div>
     );
   }

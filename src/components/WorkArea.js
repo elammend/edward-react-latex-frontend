@@ -8,7 +8,7 @@ class WorkArea extends React.Component {
   state = {
     loggedInStatus: "not logged in! log in to compile!",
     fileURL:
-      "https://elasticbeanstalk-us-east-2-757174149823.s3.us-east-2.amazonaws.com/homework.pdf",
+      "https://elasticbeanstalk-us-east-2-757174149823.s3.us-east-2.amazonaws.com/sampleReactPdf.pdf",
   };
 
   handleOpen = () => this.setState({ modalOpen: true });
@@ -17,8 +17,7 @@ class WorkArea extends React.Component {
 
   sendCompile = async () => {
     const latexText = document.getElementById("textArea").value;
-    const url =
-      "https://edward-express-latex-backend.herokuapp.com/api/v1/compile";
+    const url = "https://markdown-backend.herokuapp.com/api/v1/compile";
     //localStorage.removeItem("token");
     const bearer = "Bearer " + sessionStorage.getItem("token");
     console.log("printing token");
@@ -58,8 +57,7 @@ class WorkArea extends React.Component {
 
   sendEmail = async () => {
     const latexText = document.getElementById("textArea").value;
-    const url =
-      "https://edward-express-latex-backend.herokuapp.com/api/v1/email";
+    const url = "https://markdown-backend.herokuapp.com/api/v1/email";
     //localStorage.removeItem("token");
     const bearer = "Bearer " + sessionStorage.getItem("token");
 
