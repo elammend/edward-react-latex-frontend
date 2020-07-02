@@ -118,7 +118,7 @@ class WorkArea extends React.Component {
               <TextArea
                 id="textArea"
                 style={{ height: 740 }}
-                placeholder="Type LaTeX in here!"
+                placeholder="Type Markdown in here!"
               />
             </Form>
           </div>
