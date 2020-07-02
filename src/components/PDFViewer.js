@@ -1,31 +1,50 @@
-import React, { Component } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import React, { useRef } from "react";
+import WebViewer from "@pdftron/pdfjs-express";
+import ReactDOM from "react-dom";
+import PDF from "react-pdf-js";
 
 export default class PDFViewer extends React.Component {
-  state = {
-    numPages: null,
-    pageNumber: 1,
-  };
+  state = {};
+  handlePrevious = this.handlePrevious.bind(this);
+  handleNext = this.handleNext.bind(this);
+  onDocumentComplete = this.onDocumentComplete.bind(this);
 
-  onDocumentLoadSuccess = ({ numPages }) => {
-    this.setState({ numPages });
-  };
+  onDocumentComplete(pages) {
+    this.setState({ page: 1, pages });
+  }
+
+  handlePrevious() {
+    this.setState({ page: this.state.page - 1 });
+  }
+
+  handleNext() {
+    this.setState({ page: this.state.page + 1 });
+  }
+
+  renderPagination() {
+    return (
+      <>
+        <button onClick={this.handlePrevious}>&lt;</button>
+        <button onClick={this.handleNext}>&gt;</button>
+      </>
+    );
+  }
 
   render() {
-    const { pageNumber, numPages } = this.state;
+    console.log("pdf is rendering");
+    let pagination = null;
 
+    if (this.state.pages) {
+      pagination = this.renderPagination();
+    }
     return (
-      <div>
-        <Document
+      <div class="container">
+        <PDF
           file={this.props.incomingURL}
-          onLoadSuccess={this.onDocumentLoadSuccess}
-        >
-          <Page pageNumber={pageNumber} />
-        </Document>
-        <p>
-          Page {pageNumber} of {numPages}
-        </p>
+          page={this.state.page}
+          onDocumentComplete={this.onDocumentComplete}
+        />
+        {pagination}
       </div>
     );
   }
