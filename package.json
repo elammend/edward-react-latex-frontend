@@ -3,15 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@pdftron/pdfjs-express": "^6.3.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
+    "react-alert": "^7.0.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-pdf": "^4.0.5",
+    "react-pdf-js": "^5.1.0",
+    "react-scripts": "3.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "simple-react-alert": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3003/ react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -30,5 +36,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "prettier": "^2.0.5"
   }
 }
