@@ -46,6 +46,7 @@ class WorkArea extends React.Component {
       console.log("success");
       const res = await response.json();
       this.setState({ fileURL: res.data.message }, () => {
+        console.log("FILEURL");
         console.log(this.state.fileURL);
         console.log(res.data.errorMessage);
       });

@@ -1,1 +1,1 @@
-# edward-react-latex-frontend
+# markdown frontend
