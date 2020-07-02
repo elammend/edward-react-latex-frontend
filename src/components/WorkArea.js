@@ -17,7 +17,8 @@ class WorkArea extends React.Component {
 
   sendCompile = async () => {
     const latexText = document.getElementById("textArea").value;
-    const url = "http://localhost:3000/api/v1/compile";
+    const url =
+      "https://edward-express-latex-backend.herokuapp.com/api/v1/compile";
     //localStorage.removeItem("token");
     const bearer = "Bearer " + sessionStorage.getItem("token");
     console.log("printing token");
@@ -56,7 +57,8 @@ class WorkArea extends React.Component {
 
   sendEmail = async () => {
     const latexText = document.getElementById("textArea").value;
-    const url = "http://localhost:3000/api/v1/email";
+    const url =
+      "https://edward-express-latex-backend.herokuapp.com/api/v1/email";
     //localStorage.removeItem("token");
     const bearer = "Bearer " + sessionStorage.getItem("token");
 

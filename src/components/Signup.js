@@ -17,7 +17,8 @@ class Signup extends React.Component {
 
   signupRequest = async () => {
     console.log(this.state);
-    const url = "http://localhost:3000/api/v1/users/signup";
+    const url =
+      "https://edward-express-latex-backend.herokuapp.com/api/v1/users/signup";
     document.getElementById("signupName").value = "";
     document.getElementById("signupEmail").value = "";
     document.getElementById("signupPassword").value = "";
