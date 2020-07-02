@@ -71,9 +71,7 @@ class Login extends React.Component {
     );
   };
   onPasswordInputChange = (event) => {
-    this.setState({ password: event.target.value }, () =>
-      console.log(this.state.password)
-    );
+    this.setState({ password: event.target.value });
   };
 
   handleOpen = () => this.setState({ modalOpen: true });

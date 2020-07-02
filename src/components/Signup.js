@@ -73,14 +73,10 @@ class Signup extends React.Component {
     );
   };
   onPasswordInputChange = (event) => {
-    this.setState({ password: event.target.value }, () =>
-      console.log(this.state.password)
-    );
+    this.setState({ password: event.target.value });
   };
   onConfirmPasswordInputChange = (event) => {
-    this.setState({ confirmPassword: event.target.value }, () =>
-      console.log(this.state.confirmPassword)
-    );
+    this.setState({ confirmPassword: event.target.value });
   };
 
   handleOpen = () => this.setState({ modalOpen: true });
