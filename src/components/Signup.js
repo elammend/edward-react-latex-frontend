@@ -12,7 +12,7 @@ class Signup extends React.Component {
 
     signInStatus: "sign-in succeeded",
     signinStatusMessage: "you are now logged in",
-    visibleState: "visible",
+    visibleState: "visible"
   };
 
   signupRequest = async () => {
@@ -24,17 +24,17 @@ class Signup extends React.Component {
     document.getElementById("signupConfirmPassword").value = "";
     const options = {
       method: "POST",
-      credentials: "include",
+      //credentials: "include",
       headers: {
         Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
+        "Content-Type": "application/json;charset=UTF-8"
       },
       body: JSON.stringify({
         name: this.state.name,
         email: this.state.email,
         password: this.state.password,
-        passwordConfirm: this.state.confirmPassword,
-      }),
+        passwordConfirm: this.state.confirmPassword
+      })
     };
 
     const response = await fetch(url, options);
@@ -47,7 +47,7 @@ class Signup extends React.Component {
       this.setState(
         {
           signInStatus: "Success!",
-          signinStatusMessage: "You are now logged in",
+          signinStatusMessage: "You are now logged in"
         },
         this.handleOpen()
       );
@@ -55,27 +55,27 @@ class Signup extends React.Component {
       this.setState(
         {
           signInStatus: "Failure!",
-          signinStatusMessage: "Account already exists",
+          signinStatusMessage: "Account already exists"
         },
         this.handleOpen()
       );
     }
   };
 
-  onNameInputChange = (event) => {
+  onNameInputChange = event => {
     this.setState({ name: event.target.value }, () =>
       console.log(this.state.name)
     );
   };
-  onEmailInputChange = (event) => {
+  onEmailInputChange = event => {
     this.setState({ email: event.target.value }, () =>
       console.log(this.state.email)
     );
   };
-  onPasswordInputChange = (event) => {
+  onPasswordInputChange = event => {
     this.setState({ password: event.target.value });
   };
-  onConfirmPasswordInputChange = (event) => {
+  onConfirmPasswordInputChange = event => {
     this.setState({ confirmPassword: event.target.value });
   };
 
