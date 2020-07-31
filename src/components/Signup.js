@@ -24,11 +24,11 @@ class Signup extends React.Component {
     document.getElementById("signupConfirmPassword").value = "";
     const options = {
       method: "POST",
-      //credentials: "include",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8"
-      },
+      // credentials: "include",
+      // headers: {
+      //   Accept: "application/json",
+      //   "Content-Type": "application/json;charset=UTF-8"
+      // },
       body: JSON.stringify({
         name: this.state.name,
         email: this.state.email,
